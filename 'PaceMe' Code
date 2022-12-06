@@ -1,0 +1,48 @@
+class HeartTracker:
+    def __init__ (user,age):
+        user.age = age
+
+    def max_heartrate(user):
+        max_rate = 220 - user.age
+        return max_rate
+
+    def lower_rate_zone1(user):
+        lower_zone_1 = user.max_heartrate() * 0.55
+        return lower_zone_1
+
+    def lower_rate_zone2(user):
+        lower_zone_2 = user.max_heartrate() * 0.65
+        return lower_zone_2
+
+    def lower_rate_zone3(user):
+        lower_zone_3 = user.max_heartrate() * 0.75
+        return lower_zone_3
+
+    def lower_rate_zone4(user):
+        lower_zone_4 = user.max_heartrate() * 0.85
+        return lower_zone_4
+
+    def lower_rate_zone5(user):
+        lower_zone_5 = user.max_heartrate() * 0.95
+        return lower_zone_5
+
+    
+user_zone = HeartTracker(22)
+print (f"Range for user within zone 1 is {user_zone.lower_rate_zone1()} to {user_zone.lower_rate_zone2()} bpm pace of heart rate.")
+print (f"Range for user within zone 2 is {user_zone.lower_rate_zone2()} to {user_zone.lower_rate_zone3()} bpm pace of heart rate.")
+print (f"Range for user within zone 3 is {user_zone.lower_rate_zone3()} to {user_zone.lower_rate_zone4()} bpm pace of heart rate.")
+print (f"Range for user within zone 4 is {user_zone.lower_rate_zone4()} to {user_zone.lower_rate_zone5()} bpm pace of heart rate.")
+print (f"Range for user within zone 5 is {user_zone.lower_rate_zone5()} to {user_zone.max_heartrate()} bpm pace of heart rate.")
+
+
+#Used in Device Sync
+def AlertSystem(zone):
+    if zone_num < 1:
+        print("WARNING! HEART RATE LOW")
+    
+    if zone_num() > 5:
+        print ("ALERT! HEART RATE EXCEEDED")
+
+
+InSystem = AlertSystem()
+print(f"Rate recorded:{zone_num}")
